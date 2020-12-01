@@ -11,13 +11,15 @@ class PostsController extends Controller
         $data = [
             'posts' => $posts,
         ];
-        return view('posts.index');
+        return view('posts.index',$data);
     }
 
     public function show($id)
     {
-        $data = ['id' => $id];
-
+        $posts = Post::find($id);
+        $data = [
+            'posts' => $posts,
+        ];
         return view('posts.show', $data);
     }
 }
