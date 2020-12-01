@@ -28,4 +28,5 @@ Route::prefix('admin')->group(function () {
     Route::get('posts/create', [AdminPostsController::class, 'create'])->name('admin.posts.create');
     Route::post('posts',[AdminPostsController::class, 'store'])->name('admin.posts.store');
     Route::get('posts/{id}/edit', [AdminPostsController::class, 'edit'])->name('admin.posts.edit');
+    Route::patch('posts/{id}',[AdminPostsController::class,'update'])->name('admin.posts.update');
 });
